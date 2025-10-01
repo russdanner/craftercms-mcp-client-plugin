@@ -1,0 +1,1 @@
+# craftercms-mcp-client-plugin
