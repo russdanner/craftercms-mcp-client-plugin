@@ -21,7 +21,8 @@ import org.springframework.web.client.DefaultResponseErrorHandler
 
 import org.springframework.web.reactive.function.client.WebClient
 
-import plugins.org.craftercms.rd.plugin.mcp.server.client.McpToolCallbackProvider
+import plugins.org.craftercms.rd.plugin.mcp.client.McpSyncClient
+import plugins.org.craftercms.rd.plugin.mcp.client.McpToolCallbackProvider
 
 def openAIKey = System.getenv("crafter_openai")
 
