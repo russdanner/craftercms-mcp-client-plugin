@@ -43,7 +43,7 @@ class McpSyncClient {
         logger.info("Sending initialize request: ${objectMapper.writeValueAsString(request)}")
         
         def response = restClient.post()
-            .uri("/api/craftermcp/mcp.json")
+            .uri("/api/plugins/org/craftercms/rd/plugin/mcp/mcp.json")
             .body(request)
             .retrieve()
             .toEntity(Map.class)
