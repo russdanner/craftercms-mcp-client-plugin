@@ -1,8 +1,11 @@
 # LLM Chat Client with Model Context Protocol (MCP) Integration for CrafterCMS
 
 ## Overview
-Installs LLM Chat client example that has an integration with an MCP server
-The client is based on Spring AI. The assumed LLM implementation is OpenAI (however this is easily changed out for other vendors/APIs.)
+This plugin installs a LLM chat client example that has an integration with an MCP server.
+- The client is based on Spring AI's AI orchestration framework.
+- The assumed LLM implementation is OpenAI. That said, through the Spring AI framework, it's easy to swap in other vendors/APIs.
+
+<img width="771" height="503" alt="image" src="https://github.com/user-attachments/assets/8c742137-d009-49e3-8064-d6730e392cb8" />
 
 ## Installation & Configuration
 
