@@ -1,4 +1,4 @@
-package plugins.org.craftercms.rd.plugin.mcp.server.client
+package plugins.org.craftercms.rd.plugin.mcp.client
 
 @Grab(group='org.springframework.ai', module='spring-ai-mcp', version='1.0.0', initClass=false, systemClassLoader=true)
 

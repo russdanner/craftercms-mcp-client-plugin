@@ -1,4 +1,4 @@
-package plugins.org.craftercms.rd.plugin.mcp.server.client
+package plugins.org.craftercms.rd.plugin.mcp.client
 
 import org.springframework.ai.tool.ToolCallback
 import org.springframework.ai.tool.definition.ToolDefinition
