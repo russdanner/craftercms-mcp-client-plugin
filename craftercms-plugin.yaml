@@ -32,9 +32,9 @@ plugin:
     - MCP
     - AI
   version:
-    major: 0
-    minor: 1
-    patch: 1
+    major: 1
+    minor: 2
+    patch: 0
   description: Plugin that installs an Model Context Protocol (MCP) client into your CrafterCMS Studio or Engine instance
   documentation: "https://github.com/russdanner/craftercms-mcp-server-plugin/blob/main/README.md"
   website:
