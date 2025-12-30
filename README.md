@@ -1,4 +1,4 @@
-# LLM Chat Client with Model Context Protocol (MCP) for CrafterCMS
+# Model Context Protocol (MCP) Client Integration for CrafterCMS
 
 ## Overview
 
