@@ -69,8 +69,30 @@ plugin:
       minor: 3
     - major: 4
       minor: 4
+    - major: 4
+      minor: 5
+    - major: 4
+      minor: 6
+    - major: 4
+      minor: 7
     - major: 5
       minor: 0
   crafterCmsEditions:
     - community
     - enterprise
+  parameters:
+    - label: MCP Server URL
+      name: mcpServerUrl
+      description: MCP URL Endpoint.
+      defaultValue: /api/plugins/org/craftercms/rd/plugin/mcp/server/craftermcp/mcp.json
+      required: true
+    - label: Model ID
+      name: aiModelId
+      description: The name of the underlying LLM model to use
+      defaultValue: o4-mini-2025-04-16
+      required: true
+    - label: System Prompt
+      name: aiSystemPrompt
+      description: The system prompt to use for the chat client
+      defaultValue: You are a helpful assistant who answers questions in a professional manner.
+      required: true
