@@ -27,6 +27,10 @@ import com.fasterxml.jackson.databind.ObjectMapper
 
 import org.springframework.web.client.RestClient
 
+import groovy.json.JsonSlurper
+
+import java.nio.charset.StandardCharsets
+
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
@@ -40,12 +44,17 @@ class McpSyncClient {
     private final RestClient restClient
     private final ObjectMapper objectMapper
     private boolean initialized = false
+    private String serverUrl
 
-    McpSyncClient(restClient) {
+    McpSyncClient(restClient, serverUrl) {
         this.restClient = restClient
         this.objectMapper = new ObjectMapper()
+        this.serverUrl = serverUrl
     }
 
+    /**
+     * Initialize session with the server
+     */
     def initialize() {
         def request = [
             jsonrpc: "2.0",
@@ -63,25 +72,23 @@ class McpSyncClient {
             id: UUID.randomUUID().toString()
         ]
 
-        logger.info("Sending initialize request: ${objectMapper.writeValueAsString(request)}")
+        logger.debug("Sending initialize request: ${objectMapper.writeValueAsString(request)}")
         
         def response = restClient.post()
-            .uri("/api/plugins/org/craftercms/rd/plugin/mcp/server/craftermcp/mcp.json")
+            .uri(this.serverUrl)
             .body(request)
             .retrieve()
-            .toEntity(Map.class)
 
-        logger.info("Received initialize response: ${objectMapper.writeValueAsString(response.body)}")
+        def result = parseResponse(response)
         
-        if (response.body.error) {
-            throw new RuntimeException("Initialize failed: ${response.body.error.message}")
-        }
-        
-        initialized = true
-        return response.body.result
+        this.initialized = true
     }
 
+    /** 
+     * List tools found on the server
+     */
     def listTools() {
+        
         if (!initialized) {
             throw new IllegalStateException("Client not initialized")
         }
@@ -96,13 +103,11 @@ class McpSyncClient {
         logger.info("Sending listTools request: ${objectMapper.writeValueAsString(request)}")
         
         def response = restClient.post()
-            .uri("/api/plugins/org/craftercms/rd/plugin/mcp/server/craftermcp/mcp.json")
+            .uri(this.serverUrl)
             .body(request)
             .retrieve()
 
-        def responseObj = response.toEntity(Map.class)
-
-        return responseObj.body.result
+        return parseResponse(response)
     }
 
     def callTool(String toolName, Map parameters) {
@@ -121,24 +126,53 @@ class McpSyncClient {
             id: UUID.randomUUID().toString()
         ]
 
-        logger.info("Sending callTool request: ${objectMapper.writeValueAsString(request)}")
+        logger.debug("Sending callTool request: ${objectMapper.writeValueAsString(request)}")
         
         def response = restClient.post()
-            .uri("/api/plugins/org/craftercms/rd/plugin/mcp/server/craftermcp/mcp.json")
+            .uri(this.serverUrl)
             .body(request)
             .retrieve()
-            .toEntity(Map.class)
 
-        logger.info("Received callTool response: ${objectMapper.writeValueAsString(response.body)}")
-        
-        if (response.body.error) {
-            throw new RuntimeException("Tool call failed: ${response.body.error.message}")
-        }
-        
-        return response.body.result
+        return parseResponse(response)
     }
 
+    /**
+     * Indicates if client has been initialized
+     */
     boolean isInitialized() {
-        return initialized
+        return this.initialized
     }
+    
+    /**
+     * parse the request response
+     */
+    protected Object parseResponse(response) {
+        
+        def entity = response.toEntity(byte[])
+        def headers = entity.headers
+        def contentType = headers?.getFirst("Content-Type")
+        def responseText = new String(entity.body, StandardCharsets.UTF_8)
+        def retObj = [:]
+
+        //if("text/event-stream".equals(contentType)) {
+            responseText = responseText.substring(responseText.indexOf("data: ")+6)            
+            println("JSON \n\n $responseText")
+        //}
+
+        def responseJson = new JsonSlurper().parseText(responseText)
+
+        if(responseJson.body) {
+            if (responseJson.body.error) {
+                throw new RuntimeException("List tools failed: ${response.body.error.message}")
+            }
+            else {
+                retObj = responseJson.result       
+            }
+        }
+        else {
+            retObj = responseJson.result       
+        }
+
+        return retObj        
+    } 
 }
