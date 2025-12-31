@@ -2,12 +2,12 @@
 
 ## Overview
 
-This plugin a SpringAI-based chat service configured with an (Model Context Protocol) MCP client. This serves as a foundation for an **AI-enabled application host**, orchestrating Large Language Models while securely exposing content, services, and tools through MCP.
+This plugin a SpringAI-based chat service configured with an (Model Context Protocol) MCP client. This serves as a foundation for an **AI-enabled application**, orchestrating Large Language Models while securely exposing content, services, and tools through MCP.
 
 * Built on **Spring AI’s orchestration framework**
 * Uses **OpenAI** as the default LLM provider
 * Designed to be **vendor-agnostic** — other LLM providers can be swapped in via Spring AI with minimal changes
-* Demonstrates **end-to-end MCP integration** from UI → LLM → MCP server → CrafterCMS context
+* Demonstrates **end-to-end MCP integration** from UI → LLM → MCP server
 
 <img width="771" height="503" alt="image" src="https://github.com/user-attachments/assets/8c742137-d009-49e3-8064-d6730e392cb8" />
 
