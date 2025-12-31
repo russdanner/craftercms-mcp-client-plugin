@@ -32,8 +32,8 @@ plugin:
     - MCP
     - AI
   version:
-    major: 0
-    minor: 6
+    major: 1
+    minor: 0
     patch: 0
   description: Plugin that installs an Model Context Protocol (MCP) client into your CrafterCMS Studio or Engine instance
   documentation: "https://github.com/russdanner/craftercms-mcp-server-plugin/blob/main/README.md"
@@ -82,11 +82,11 @@ plugin:
       required: false
     - label: Model ID
       name: aiModelId
-      description: The name of the underlying LLM model to use
+      description: The name of the underlying LLM model to use.
       defaultValue: o4-mini-2025-04-16
       required: false
     - label: System Prompt
       name: aiSystemPrompt
-      description: The system prompt to use for the chat client
+      description: The system prompt to use for the chat client.
       defaultValue: You are a helpful assistant who answers questions in a professional manner.
       required: false
