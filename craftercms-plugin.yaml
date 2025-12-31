@@ -33,7 +33,7 @@ plugin:
     - AI
   version:
     major: 0
-    minor: 4
+    minor: 5
     patch: 0
   description: Plugin that installs an Model Context Protocol (MCP) client into your CrafterCMS Studio or Engine instance
   documentation: "https://github.com/russdanner/craftercms-mcp-server-plugin/blob/main/README.md"
@@ -42,9 +42,9 @@ plugin:
     url: https://github.com/russdanner/craftercms-mcp-client-plugin
   media:
     screenshots:
-      - title: Sitemap
-        description: Sitemap
-        url: https://github.com/russdanner/craftercms-mcp-client-plugin/master/.crafter/logo.webp
+      - title: MCP Client logo
+        description: MCP Client logo
+        url: https://raw.githubusercontent.com/russdanner/craftercms-mcp-client-plugin/refs/heads/main/.crafter/logo.webp
   developer:
     company:
       name: Russ Danner
