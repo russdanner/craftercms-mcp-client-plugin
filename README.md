@@ -72,7 +72,7 @@ At a high level, the plugin consists of:
 Optional parameters (shown here with defaults):
 ```xml
 <configuration>
-    <mcpServerUrl>/api/plugins/org/craftercms/rd/plugin/mcp/server/craftermcp/mcp.json</mcpServerUrl>
+    <mcpServerUrl>http://localhost:8080/api/plugins/org/craftercms/rd/plugin/mcp/server/craftermcp/mcp.json</mcpServerUrl>
     <aiSystemPrompt>You are a helpful assistant who answers questions in a professional manner.</aiSystemPrompt>
     <aiModelId>o4-mini-2025-04-16</aiModelId>
 </configuration>

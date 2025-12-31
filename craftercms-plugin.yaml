@@ -34,7 +34,7 @@ plugin:
   version:
     major: 1
     minor: 3
-    patch: 1
+    patch: 2
   description: Plugin that installs an Model Context Protocol (MCP) client into your CrafterCMS Studio or Engine instance
   documentation: "https://github.com/russdanner/craftercms-mcp-client-plugin/blob/main/README.md"
   website:
@@ -63,7 +63,7 @@ plugin:
     - label: MCP Server URL
       name: mcpServerUrl
       description: MCP URL Endpoint.
-      defaultValue: /api/plugins/org/craftercms/rd/plugin/mcp/server/craftermcp/mcp.json
+      defaultValue: http://localhost:8080/api/plugins/org/craftercms/rd/plugin/mcp/server/craftermcp/mcp.json
       required: false
     - label: Model ID
       name: aiModelId
