@@ -56,8 +56,6 @@ plugin:
   crafterCmsVersions:
     - major: 4
       minor: 4
-    - major: 4
-      minor: 5
   crafterCmsEditions:
     - community
     - enterprise
