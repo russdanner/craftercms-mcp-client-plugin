@@ -2,17 +2,17 @@
 
 ## Overview
 
-This plugin a SpringAI-based chat service configured with an (Model Context Protocol) MCP client. This serves as a foundation for an **AI-enabled application**, orchestrating Large Language Models while securely exposing content, services, and tools through MCP.
+This plugin is a SpringAI-based chat service configured with an MCP (Model Context Protocol) client. This serves as a foundation for an [AI-enabled content application](https://craftercms.com/blog/content-management/what-is-an-ai-cms), orchestrating Large Language Models while securely exposing content, services, and tools through MCP.
 
-* Built on **Spring AI’s orchestration framework**
+* Built on [Spring AI’s orchestration framework](https://craftercms.com/blog/technical/what-is-springai)
 * Uses **OpenAI** as the default LLM provider
-* Designed to be **vendor-agnostic** — other LLM providers can be swapped in via Spring AI with minimal changes
+* Designed to be **vendor-agnostic** (other LLM providers can be swapped in via Spring AI with minimal changes)
 * Demonstrates **end-to-end MCP integration** from UI → LLM → MCP server
 
 <img width="771" height="503" alt="image" src="https://github.com/user-attachments/assets/8c742137-d009-49e3-8064-d6730e392cb8" />
 
 ## Quick Links
-Installation Video / Demo
+Installation Video & Demo
 https://www.youtube.com/watch?v=iyiW3MgEXzU
 
 ---
@@ -25,7 +25,7 @@ The **Model Context Protocol (MCP)** provides a standardized way for LLMs to:
 * Request structured data and perform actions through well-defined interfaces
 * Operate with **explicit, auditable context** rather than implicit prompt stuffing
 
-Within CrafterCMS, MCP enables:
+Within [CrafterCMS](https://craftercms.com), MCP enables:
 
 * Secure access to CMS content, metadata, and services
 * Controlled execution of server-side tools
