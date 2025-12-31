@@ -65,6 +65,14 @@ At a high level, the plugin consists of:
 
 2. Install the plugin into your CrafterCMS project.
 
+Optional parameters (shown here with defaults):
+```xml
+<configuration>
+    <mcpServerUrl>/api/plugins/org/craftercms/rd/plugin/mcp/server/craftermcp/mcp.json</mcpServerUrl>
+    <aiSystemPrompt>You are a helpful assistant who answers questions in a professional manner.</aiSystemPrompt>
+    <aiModelId>o4-mini-2025-04-16</aiModelId>
+</configuration>
+```
 3. To enable the example chat UI, include the provided FreeMarker template:
 
    ```ftl
