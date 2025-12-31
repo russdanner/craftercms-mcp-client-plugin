@@ -51,7 +51,7 @@ import plugins.org.craftercms.rd.plugin.mcp.client.McpToolCallbackProvider
 // Get configuration
 def mcpServerUrl = pluginConfig.getString('mcpServerUrl') 
 def aiSystemPrompt = pluginConfig.getString('aiSystemPrompt')
-def aiModelId = "".equals(pluginConfig.getString('aiModelId')) ? "" : pluginConfig.getString('aiModelId') 
+def aiModelId = pluginConfig.getString('aiModelId') 
 
 // Get secrets
 def openAIKey = System.getenv("crafter_openai")
@@ -86,10 +86,9 @@ try {
         .defaultToolCallbacks(toolCallbackProvider)
         .build()
 
-    // aiSystemPrompt
-    
     // Execute chat request
     def chatResponse = chatClient.prompt()
+        .system(aiSystemPrompt)
         .user(query)
         .call()
         .content()
