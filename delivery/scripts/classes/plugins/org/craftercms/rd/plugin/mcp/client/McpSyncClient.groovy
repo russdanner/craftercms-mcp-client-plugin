@@ -154,10 +154,10 @@ class McpSyncClient {
         def responseText = new String(entity.body, StandardCharsets.UTF_8)
         def retObj = [:]
 
-        //if("text/event-stream".equals(contentType)) {
+        if("text/event-stream".equals(contentType)) {
             responseText = responseText.substring(responseText.indexOf("data: ")+6)            
             println("JSON \n\n $responseText")
-        //}
+        }
 
         def responseJson = new JsonSlurper().parseText(responseText)
 
