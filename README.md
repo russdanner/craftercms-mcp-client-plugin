@@ -11,6 +11,10 @@ This plugin a SpringAI-based chat service configured with an (Model Context Prot
 
 <img width="771" height="503" alt="image" src="https://github.com/user-attachments/assets/8c742137-d009-49e3-8064-d6730e392cb8" />
 
+## Quick Links
+Installation Video / Demo
+https://www.youtube.com/watch?v=iyiW3MgEXzU
+
 ---
 
 ## What MCP Enables
