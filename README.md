@@ -43,7 +43,7 @@ This architecture makes AI integrations **safer, more maintainable, and more ext
 
 At a high level, the plugin consists of:
 
-* An **MCP server integration** that exposes CrafterCMS context and capabilities to the LLM
+* An **MCP client service** that exposes CrafterCMS context to the LLM
 * A **Spring AI chat client** responsible for:
 
   * Prompt orchestration
